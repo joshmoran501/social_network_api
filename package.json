@@ -1,0 +1,24 @@
+{
+  "name": "social_network_api",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshmoran501/social_network_api"
+  },
+  "author": "Joshua Moran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshmoran501/social_network_api/issues"
+  },
+  "homepage": "https://github.com/joshmoran501/social_network_api#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.6.0"
+  }
+}
