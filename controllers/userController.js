@@ -62,11 +62,13 @@ module.exports = {
   },
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userID })
-      .then((dbUserData) =>
-        !dbUserData
-          ? res.status(404).json({ message: "No user with that ID" })
-          : res.json(dbUserData)
-      )
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          return res.status(404).json({ message: "No user with that ID" });
+        }
+        return Thought.deleteMany({ _id: { $in: dbUserdata.thoughts } });
+      })
+      .then(() => res.json({ message: "User deleted" }))
       .catch((err) => res.status(500).json(err));
   },
   addFriend(req, res) {
